@@ -110,7 +110,7 @@ Splunk (SPL, alertas, dashboards) · Sysmon · MITRE ATT&CK · Análise de logs 
 
 ## Autor
 
-**Seu Nome**: [LinkedIn](https://linkedin.com/in/seu-perfil) · [GitHub](https://github.com/seu-usuario)
+Diogo Bello: [LinkedIn](https://linkedin.com/in/diogo-bello) · [GitHub](https://github.com/Dioguint)
 
 ## Licença
 
