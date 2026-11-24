@@ -1,0 +1,7 @@
+// T1070.001 - Limpeza de logs de eventos
+index=wineventlog ((source="WinEventLog:Security" EventCode=1102) OR (source="WinEventLog:System" EventCode=104))
+| table _time host EventCode Message
+| sort - _time
+
+// Complemento via Sysmon: wevtutil cl
+// index=sysmon EventCode=1 Image="*\\wevtutil.exe" CommandLine="* cl *"

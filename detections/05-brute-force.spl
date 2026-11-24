@@ -1,0 +1,6 @@
+// T1110 - Múltiplas falhas de logon (5 ou mais em 5 minutos)
+index=wineventlog source="WinEventLog:Security" EventCode=4625
+| bin _time span=5m
+| stats count AS falhas dc(user) AS usuarios_distintos values(user) AS usuarios by _time Source_Network_Address host
+| where falhas >= 5
+| sort - falhas

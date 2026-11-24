@@ -1,0 +1,5 @@
+// T1105 - Download via certutil (LOLBin)
+index=sysmon EventCode=1 Image="*\\certutil.exe"
+    (CommandLine="*urlcache*" OR CommandLine="*-split*" OR CommandLine="*http://*" OR CommandLine="*https://*")
+| table _time host User ParentImage CommandLine
+| sort - _time

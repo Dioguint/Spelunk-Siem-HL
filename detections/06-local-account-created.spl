@@ -1,0 +1,4 @@
+// T1136.001 - Criação de conta local
+index=wineventlog source="WinEventLog:Security" EventCode=4720
+| table _time host Subject_Account_Name Account_Name
+| sort - _time

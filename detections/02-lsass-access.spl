@@ -1,0 +1,6 @@
+// T1003.001 - Acesso ao processo LSASS
+index=sysmon EventCode=10 TargetImage="*\\lsass.exe"
+    NOT (SourceImage="*\\wininit.exe" OR SourceImage="*\\csrss.exe" OR SourceImage="*\\svchost.exe" OR SourceImage="*\\MsMpEng.exe")
+    (GrantedAccess="0x1010" OR GrantedAccess="0x1410" OR GrantedAccess="0x1438" OR GrantedAccess="0x143a" OR GrantedAccess="0x1fffff")
+| table _time host SourceImage TargetImage GrantedAccess CallTrace
+| sort - _time

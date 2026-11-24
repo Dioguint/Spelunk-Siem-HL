@@ -1,0 +1,5 @@
+// T1547.001 - Persistência via chave Run do registro
+index=sysmon EventCode=13
+    (TargetObject="*\\CurrentVersion\\Run\\*" OR TargetObject="*\\CurrentVersion\\RunOnce\\*")
+| table _time host User Image TargetObject Details
+| sort - _time
